@@ -3,9 +3,6 @@
 #B) quantos homens foram cadastrados.
 #C) quantas mulheres tem menos de 20 anos.
 
-y = 0
-x = 0
-
 idade = 0
 homens = 0
 maiores = 0
