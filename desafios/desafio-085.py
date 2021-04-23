@@ -1,41 +1,36 @@
-#Exercício Python 084: Faça um programa que leia nome e peso de várias pessoas, guardando tudo em uma lista. 
-#No final, mostre:
-#A) Quantas pessoas foram cadastradas.
-#B) Uma listagem com as pessoas mais pesadas.
-#C) Uma listagem com as pessoas mais leves.
+#Exercício Python 085: Crie um programa onde o usuário possa digitar sete valores numéricos e cadastre-os em uma lista única que mantenha separados os valores pares e ímpares. No final, mostre os valores pares e ímpares em ordem crescente.
 
-princ = list()
+
+#MY WAY
+'''princ = list()
 temp = list()
-mai = men = 0
-
-while True:
-    temp.append(str(input('Nome: ')))
-    temp.append(float(input('Peso: ')))
-    
-    if len(princ) == 0:
-        mai = men = temp[1]
+for c in range(1, 8):
+    temp.append(int(input(f'Digite o {c}° valor: ')))
+    if temp[0] % 2 == 0:
+        temp.append(str('par'))
     else:
-        if temp[1] > mai:
-            mai = temp[1]
-        if temp[1] < men:
-            men = temp[1]
-    
+        temp.append(str('impar'))
     princ.append(temp[:])
     temp.clear()
-    
-    again = str(input('\033[1;33mQuer continuar [S/N]:\033[m ').strip().upper()[0])
-    if again == 'N':
-        break
-    
-
-print(f'Foram cadastradas {len(princ)} Pessoas')
-print(f'O maior peso foi de {mai}Kg. Peso de ', end='')
+print('Os valores pares digitados foram:', end='')
 for p in princ:
-    if p[1] == mai:
+    if p[1] == 'par':
         print(f'[{p[0]}] ', end='')
 print()
-print(f'O menor peso foi de {men}Kg. Peso de ', end='')
-for p in princ:
-    if p[1] == men:
-        print(f'[{p[0]}] ', end='')
-print()
+print('Os valores impares digitados foram:', end='')
+for i in princ:
+    if i[1] == 'impar':
+        print(f'[{i[0]}] ', end='')'''
+        
+num = [[], []]
+valor = 0
+for c in range(1, 8):
+    valor = int(input(f'Digite o {c}° valor: '))
+    if valor % 2 == 0:
+        num[0].append(valor)
+    else: 
+        num[1].append(valor)
+num[0].sort()
+num[1].sort()
+print(f'Os valores pares digitados foram: {num[0]}')
+print(f'Os valores impares digitados foram: {num[1]}')
